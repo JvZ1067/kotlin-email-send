@@ -74,13 +74,11 @@ class MainActivity : AppCompatActivity() {
         val properties = System.getProperties()
 
         with (properties) {
-            put("mail.smtp.host", host!!.host) //Configure smtp host
-            put("mail.smtp.port", host!!.port) //Configure smtp port 456
+            put("mail.smtp.host", host!!.host)
             put("mail.smtp.socketFactory.port", host!!.port)
-//            put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory")
-            put("mail.smtp.starttls.enable", "true") //Enable TLS
-            put("mail.smtp.auth", "true") //Enable authentication
-            put("mail.transport.protocol","smtp")
+            put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+            put("mail.smtp.auth", "true")
+            put("mail.smtp.port", host!!.port)
         }
 
         val auth = object: Authenticator() {
@@ -91,13 +89,10 @@ class MainActivity : AppCompatActivity() {
         val session = Session.getDefaultInstance(properties, auth)
 
         val message = MimeMessage(session)
-
-        with (message) {
-            setFrom(InternetAddress(from))
-            addRecipient(Message.RecipientType.TO, InternetAddress(tos))
-            subject = binding.subjectEmail.text.toString() //Email subject
-            setText(binding.emailBody.text.toString()) //Sending html message, you may change to send text here.
-        }
+        message.setFrom(from)
+        message.setRecipient(Message.RecipientType.TO,InternetAddress(tos))
+        message.subject=binding.subjectEmail.text.toString()
+        message.setText(binding.emailBody.text.toString())
 
         return message
     }
