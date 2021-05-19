@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SendEmail</string>
+    <string name="preference_file_key">HOST_CONFIGURATION</string>
+    <string name="HOST_NAME">HOST</string>
+    <string name="PUERTO_VALUE">PORT</string>
+    <string name="USERNAME_VALUE">USERNAME</string>
+    <string name="PASSWORD_VALUE">PASSWORD</string>
+    <string name="send">send</string>
+    <string name="setting">Config Host</string>
+</resources>

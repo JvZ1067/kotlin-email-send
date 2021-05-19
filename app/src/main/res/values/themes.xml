@@ -1,0 +1,48 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SendEmail" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorInfo</item>
+        <item name="colorPrimaryVariant">@color/colorInfo</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnBackground">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorErrorLight</item>
+        <item name="colorSecondaryVariant">@color/colorError</item>
+
+        <item name="colorOnSecondary">@color/colorDark</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="statusBarForeground" tools:targetApi="l">@color/colorDark</item>
+        <item name="android:colorBackground">@color/white</item>
+
+        <item name="android:textColor">@color/colorDark</item>
+
+        <item name="android:textColorSecondary">@color/colorDark</item>
+
+        <!--        Add CardView-->
+        <item name="materialCardViewStyle">@style/Widget.App.CardView</item>
+        <!--        add animation-->
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="Widget.App.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/colorWhite</item>
+    </style>
+
+    <style name="InputTextStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxCornerRadiusBottomEnd">25dp</item>
+        <item name="boxCornerRadiusTopStart">25dp</item>
+        <item name="boxCornerRadiusTopEnd">25dp</item>
+        <item name="boxCornerRadiusBottomStart">25dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxBackgroundColor">@color/colorWhite</item>
+    </style>
+
+    <style name="ActionBarTitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorDark</item>
+    </style>
+</resources>
