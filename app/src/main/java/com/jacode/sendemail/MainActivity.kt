@@ -76,9 +76,8 @@ class MainActivity : AppCompatActivity() {
         with (properties) {
             put("mail.smtp.host", host!!.host)
             put("mail.smtp.socketFactory.port", host!!.port)
-            put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+            put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory")
             put("mail.smtp.auth", "true")
-            put("mail.smtp.port", host!!.port)
         }
 
         val auth = object: Authenticator() {

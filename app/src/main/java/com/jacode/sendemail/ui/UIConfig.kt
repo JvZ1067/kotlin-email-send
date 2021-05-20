@@ -23,6 +23,16 @@ class UIConfig : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityUiconfigBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val host=provider.readConfiguration(this)
+
+        if (host.port!=0){
+            binding.hostName.setText(host.host)
+            binding.hostPort.setText(host.port.toString())
+            binding.password.setText(host.password)
+            binding.username.setText(host.username)
+        }
+
         binding.btnSave.setOnClickListener {
             lifecycleScope.launch {
 //                ProgressDialogFragment.showProgressBar(this@UIConfig)
